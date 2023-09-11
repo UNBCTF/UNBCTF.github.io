@@ -8938,41 +8938,6 @@ body {
 .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active {
   color: #c1f8c2; }
 
-.vim-caret {
-  -webkit-animation: vimCaret 1s linear infinite;
-       -o-animation: vimCaret 1s linear infinite;
-          animation: vimCaret 1s linear infinite; }
-
-@-webkit-keyframes vimCaret {
-  0% {
-    background-color: transparent; }
-  49% {
-    background-color: transparent; }
-  50% {
-    background-color: rgba(255, 255, 255, 0.2); }
-  100% {
-    background-color: rgba(255, 255, 255, 0.2); } }
-
-@-o-keyframes vimCaret {
-  0% {
-    background-color: transparent; }
-  49% {
-    background-color: transparent; }
-  50% {
-    background-color: rgba(255, 255, 255, 0.2); }
-  100% {
-    background-color: rgba(255, 255, 255, 0.2); } }
-
-@keyframes vimCaret {
-  0% {
-    background-color: transparent; }
-  49% {
-    background-color: transparent; }
-  50% {
-    background-color: rgba(255, 255, 255, 0.2); }
-  100% {
-    background-color: rgba(255, 255, 255, 0.2); } }
-
 .list-group-item-primary {
   color: #3b2874;
   background-color: #8869e4; }

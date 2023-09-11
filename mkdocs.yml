@@ -1,0 +1,51 @@
+site_name: UNB Cyber
+site_url: https://unbctf.github.io/
+
+theme:
+  name: material
+  logo: assets/images/favicon.png
+  favicon: assets/images/favicon.png
+  custom_dir: docs/overrides
+  palette:
+    scheme: slate
+    primary: black
+
+  features:
+    - navigation.tabs
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Blog:
+      - blog/index.md
+
+extra:
+  generator: true
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/kU6MRNr82J
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/UNBCTF/
+    - icon: fontawesome/brands/github
+      link: https://github.com/UNBCTF
+    - icon: fontawesome/brands/twitch
+      link: https://www.twitch.tv/unbctf
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - blog:
+      blog_toc: true
+
+markdown_extensions:
+  - tables
+  - pm_attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

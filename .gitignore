@@ -1,2 +1,9 @@
 # For Mac users
 .DS_Store
+
+# Obsidian notes
+.obsidian
+
+# Build info for pm_attr_list
+pm_attr_list/pm_attr_list.egg-info/
+pm_attr_list/build/
