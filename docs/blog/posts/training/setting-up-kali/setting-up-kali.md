@@ -16,6 +16,8 @@ Let's get started setting up your Kali Linux virtual machine.
 
 Kali Linux is a distribution of Linux that comes with many useful tools for ethical hacking.
 
+![Kali Linux](./images/kali-dragon-icon.svg){style="width: 50%; margin:0 35% 0 15%; display: block;"}
+
 <!-- more -->
 
 ## What is a VM?
@@ -34,7 +36,7 @@ Virtual machines are ran using virtualization software. There are two free-to-us
 
 You may choose either software to install. They are practically equivalent in terms of features, and the difference is opinion-based.
 
-![VM Software](./images/vmsoftware.png)
+![VM Software](./images/vmsoftware.png){style="width: 50%; margin: auto; display: block;"}
 
 ## How do I get a Kali Linux VM?
 
@@ -69,7 +71,7 @@ When met with the login screen, the default username and password are both `kali
 One final recommendation is to install the package `kali-linux-large`, which contains many useful tools. You can do install the package by opening a terminal and running the following commands:
 
 1. `sudo apt update`
-2. `sudo apt install kali-linux-large`
+2. `sudo apt -y install kali-linux-large`
 
 ## What now?
 
