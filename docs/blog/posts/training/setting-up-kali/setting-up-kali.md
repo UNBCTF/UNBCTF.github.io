@@ -1,6 +1,5 @@
 ---
 date: 2023-09-11
-draft: true
 categories:
   - Training
 authors:
