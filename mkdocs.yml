@@ -38,6 +38,7 @@ extra_css:
 plugins:
   - blog:
       blog_toc: true
+      post_url_format: "{categories}/{slug}"
 
 markdown_extensions:
   - tables

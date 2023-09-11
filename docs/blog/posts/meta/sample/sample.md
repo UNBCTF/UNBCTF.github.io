@@ -2,7 +2,7 @@
 date: 2023-09-03
 draft: true
 categories:
-  - writeups
+  - Meta
 authors:
   - silk
 ---
