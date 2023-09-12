@@ -41,18 +41,29 @@ You may choose either software to install. Both options are practically equivale
 
 You can download pre-built Kali virtual machines from the Kali Linux website. [Download the VM matching your chosen software (VMware or VirtualBox).](https://www.kali.org/get-kali/#kali-virtual-machines)
 
+![Download Kali Linux](./images/download-vms.png)
+
 ## How do I install a Kali Linux VM?
 
 Extract the downloaded archive to a folder you will remember. Common virtual machine folders are:
 
 - `C:\Users\[username]\VirtualBox VMs`
 - `C:\Users\[username]\Documents\Virtual Machines`
+- `C:\VirtualBox VMs`
+
+![Extracting Kali Linux](./images/extracting-vm.png)
 
 Once you extract the archive, you can open either the `kali-linux-...-virtualbox-amd64.vbox` file (VirtualBox) or the `kali-linux-...-vmware-amd64.vmx` file (VMware). The VM will open in either VirtualBox or VMware.
 
 After you have opened the file once, you can simply launch the VM from the VM software going forward.
 
+![Installing Kali Linux](./images/installing-vm.png)
+
 You may wish to increase the amount of RAM and CPU threads allocated to the VM to improve its performance.
+
+![VM Settings Right Click](./images/vm-settings-right-click.png)
+
+![VM Settings](./images/vm-settings.png)
 
 Now your VM is installed and ready to be ran.
 
@@ -65,12 +76,22 @@ With your newly installed VM, click **Run** or **Start** in your preferred VM so
 - **Right Ctrl** if using VirtualBox.
 - **Ctrl + Alt** if using VMware.
 
+![VM Starting](./images/vm-starting.png)
+
 When met with the login screen, the default username and password are both `kali`.
+
+![VM Login](./images/vm-login.png)
 
 One final recommendation is to install the package `kali-linux-large`, which contains many useful tools. You can install the package by opening a terminal and running the following commands:
 
 1. `sudo apt update`
 2. `sudo apt -y install kali-linux-large`
+
+When prompted, enter the password in the terminal.
+
+![Kali Terminal](./images/kali-terminal.png)
+
+![Kali Installing kali-linux-large](./images/kali-installing-large.png)
 
 ## What now?
 
