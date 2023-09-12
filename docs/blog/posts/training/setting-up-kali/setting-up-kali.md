@@ -143,15 +143,17 @@ Extract the downloaded archive to a folder you will remember. Common virtual mac
 
 ![Extracting Kali Linux](./images/extracting-vm.png)
 
-Once you extract the archive:
+After you have extracted the virtual machine, you must open it.
 
-- If you are using VirtualBox, simply double-click the `kali-linux-...-virtualbox-amd64.vbox` file.
-- If you are using VMware:
-  1. Open VMware.
-  2. Click **Open a Virtual Machine**.
-  3. Navigate to the folder where you extracted the VM.
-  4. Select the `kali-linux-...-vmware-amd64.vmx` file.
-  5. Click **Open**.
+If you are using VirtualBox, simply double-click the `kali-linux-...-virtualbox-amd64.vbox` file.
+
+If you are using VMware:
+
+1. Open VMware.
+2. Click **Open a Virtual Machine**.
+3. Navigate to the folder where you extracted the VM.
+4. Select the `kali-linux-...-vmware-amd64.vmx` file.
+5. Click **Open**.
 
 After you have opened the file once, you can simply launch the VM from the VM software going forward.
 
