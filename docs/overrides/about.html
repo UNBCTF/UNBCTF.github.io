@@ -1,3 +1,49 @@
+<!-- Render navigation link content -->
+{% macro render_content(nav_item, ref = nav_item) %}
+
+  <!-- Navigation link icon -->
+  {% if nav_item == ref or "navigation.indexes" in features %}
+    {% if nav_item.is_index and nav_item.meta.icon %}
+      {% include ".icons/" ~ nav_item.meta.icon ~ ".svg" %}
+    {% endif %}
+  {% endif %}
+
+  <!-- Navigation link title -->
+  {{ ref.title }}
+{% endmacro %}
+
+<!-- Render navigation item -->
+{% macro render(nav_item, ref = nav_item) %}
+
+  <!-- Determine classes -->
+  {% set class = "md-tabs__item" %}
+  {% if ref.active %}
+    {% set class = class ~ " md-tabs__item--active" %}
+  {% endif %}
+
+  <!-- Navigation item with nested items -->
+  {% if nav_item.children %}
+    {% set first = nav_item.children | first %}
+
+    <!-- Recurse, if the first item has further nested items -->
+    {% if first.children %}
+      {{ render(first, ref) }}
+
+    <!-- Nested navigation item -->
+    {% else %}
+      <a href="{{ first.url | url }}" class="p-3 text-decoration-none text-light">
+        {{ render_content(first, ref) }}
+      </a>
+    {% endif %}
+
+  <!-- Navigation item -->
+  {% else %}
+    <a href="{{ nav_item.url | url }}" class="p-3 text-decoration-none text-light">
+      {{ render_content(nav_item) }}
+    </a>
+  {% endif %}
+{% endmacro %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +54,7 @@
     <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap4-neon-glow.min.css' | url }}">
     
     
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -25,12 +71,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a href="index.html" class="p-3 text-decoration-none text-light">Home</a>
-            <a href="about.html" class="p-3 text-decoration-none text-light">About</a>
+            {% for nav_item in nav %}
+              {{ render(nav_item) }}
+            {% endfor %}
           </div>
         </div>
       </nav>
-
     </div>
   </div>
 
