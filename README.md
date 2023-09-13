@@ -1,4 +1,4 @@
-# UNBCTF.github.io
+# unbcybersec.com
 
 A website built using Material for MkDOcs.
 
