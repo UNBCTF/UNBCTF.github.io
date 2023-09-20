@@ -11,13 +11,13 @@ slug: setting-up-kali
 
 Let's get started setting up your Kali Linux virtual machine.
 
-## Why?
-
-Kali Linux is a distribution of Linux that comes with many valuable tools for ethical hacking.
-
 ![Kali Linux](./images/kali-dragon-icon.svg){style="width: 50%; margin:0 35% 0 15%; display: block;"}
 
 <!-- more -->
+
+## Why?
+
+Kali Linux is a distribution of Linux that comes with many valuable tools for ethical hacking.
 
 ## What is a VM?
 
