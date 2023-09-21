@@ -21,18 +21,59 @@ Now that you have a Linux virtual machine set up, let's get cooking on the comma
 ## Why?
 
 Linux is used everywhere in the field of cybersecurity. Why? Because it's useful. Its usefulness has led to a thriving ecosystem of people and software. This is why so many of the tools we will use have been developed for Linux, and why we continue to use it.
-
 ## Overview
 
 A quick reference guide and overview of the Linux filesystem.
+## Commands
+
+Arguably, the most important part of Linux is the commands. Commands allow for quick and extensible usage of programs installed on the system.
+
+There are commands for listing files, making web requests, editing users, shutting down the system, and this list goes on. Practically everything in Linux can be done using commands, as long as you have the correct commands installed, and permissions to do so.
+
+### Hello World
+
+First, open a terminal in your virtual machine. In Kali, you can do this by clicking the Terminal icon in the top-left of the desktop.
+
+![Terminal Icon](./images/terminal_icon.png)
+![Linux Terminal](./images/terminal.png)
+
+We will start off by looking at the `echo` command. This command simply echoes the provided text back to the output. For example, `echo hello world` will simply print `hello world`.
+
+![Hello World](./images/helloworld.png)
+
+There are two parts to this command:
+
+1. `echo`: The command itself.
+2. `hello world`: The arguments/parameters passed to the command. In this case, the parameter is simply text we want to be printed.
+
+What are parameters? They're important, so let's look further into them.
+### More Parameters
+
+Parameters allow us to tune what a command does. For example, the `ls` command lists the files and directories within the current directory.
+
+Another important command is `ls`, which lists files and sub-directories in the current directory.
+
+![ls output](./images/ls.png)
+
+One parameter available for the `ls` command is `-a`. The `-a` parameter prints hidden files, which are files in Linux that start with a `.` character.
+
+![ls hidden](./images/ls_hidden.png)
+
+Another parameter for the `ls` command is `-l`, which prints one entry per line. The `-l` parameter also outputs the file permissions, file size, and last write date for reach file.
+
+![ls list](./images/ls_list.png)
+
+Commands usually allow multiple parameters, and we can combine the `-l` and `-a` parameters in this case: `ls -l -a`. When parameters start with a dash (`-`), they can often be combined into one as well: `ls -la` (this is not always the case).
+
+How can we find these parameters and unlock the functionality of commands? There are two ways usually:
 
 
-## In-depth
 
-### Users
+### More Commands
 
 
-### Commands
+
+## Users
 
 
 ### File System
