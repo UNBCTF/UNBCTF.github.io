@@ -5,7 +5,7 @@ categories:
 authors:
   - silk
 slug: linux-basics
-draft: true
+draft: false
 ---
 
 # Linux Basics
