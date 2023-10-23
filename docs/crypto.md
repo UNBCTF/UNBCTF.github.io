@@ -1,0 +1,4 @@
+---
+title:
+template: crypto.html
+---

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Me Right Round</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap4-neon-glow.min.css' | url }}">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+</head>
+
+<body class="bg-dark">
+    <div class="container">
+        <h1 class="mt-5 mb-4">Spin Me Right Round</h1>
+
+        <div class="mt-4">
+            <p><strong>You have intercepted the following encrypted message:</strong></p>
+            <div class="alert alert-success">Iqxoayq fa ftq GZN Oknqdeqogdufk Oxgn! Iq'dq tmbbk fa tmhq kag.
+                GZNOFR{i3xOay3_f0_fTq_OXgN}</div>
+        </div>
+
+        <div class="form-group">
+            <strong>You can encrypt your own using this super-SECURE patented encryption algorithm:</strong>
+
+            <div class="form-group">
+                <label for="inputText">Enter a message:</label>
+                <input type="text" class="form-control" id="inputText" placeholder="Type your text here">
+            </div>
+
+            <div class="form-group">
+                <label for="shiftAmount">Shift Amount (1-25):</label>
+                <input type="number" class="form-control" id="shiftAmount" min="1" max="25" value="2">
+            </div>
+        </div>
+
+        <button class="btn btn-primary mt-2" onclick="encodeROT13()">Encrypt</button>
+
+        <div class="mt-4">
+            <p><strong>Encrypted Text:</strong></p>
+            <div class="alert alert-success" id="outputText"></div>
+        </div>
+    </div>
+
+    <script>
+        let shiftValue = 13; // Default shift value
+
+        function encodeROT13() {
+            setShiftAmount();
+
+            const inputText = document.getElementById("inputText").value;
+            const outputText = document.getElementById("outputText");
+
+            const encodedText = rot13(inputText, shiftValue);
+            outputText.textContent = encodedText;
+        }
+
+        function setShiftAmount() {
+            const shiftAmount = parseInt(document.getElementById("shiftAmount").value);
+            if (shiftAmount >= 1 && shiftAmount <= 25) {
+                shiftValue = shiftAmount;
+            } else {
+                alert("Shift amount must be between 1 and 25.");
+            }
+        }
+
+        function rot13(str, shift) {
+            return str.replace(/[a-zA-Z]/g, function (c) {
+                const offset = c <= "Z" ? 65 : 97;
+                return String.fromCharCode((c.charCodeAt(0) - offset + shift) % 26 + offset);
+            });
+        }
+    </script>
+</body>
+
+</html>
