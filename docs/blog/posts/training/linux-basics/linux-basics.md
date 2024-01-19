@@ -1,5 +1,5 @@
 ---
-date: 2023-10-19
+date: 2024-01-19
 categories:
   - Training
 authors:
@@ -21,39 +21,40 @@ Now that you have a Linux virtual machine set up, let's get cooking on the comma
 ## Why?
 
 Linux is used everywhere in the field of cybersecurity. Why? Because it's useful. Its usefulness has led to a thriving ecosystem of people and software. This is why so many of the tools we will use have been developed for Linux, and why we continue to use it.
+
 ## Overview
 
-A quick reference guide and overview of the Linux filesystem.
+This post will cover different aspects of Linux, including commands, users, and the filesystem. At the end of the post, there will be a couple of cheat sheets for common commands and filesystem directories.
 
 ## Commands
 
-Arguably, the most important part of Linux is the commands. Commands allow for quick and extensible usage of programs installed on the system.
+Arguably, the most essential part of Linux is the commands. Commands allow for quick and extensible usage of programs installed on the system.
 
-There are commands for listing files, making web requests, editing users, shutting down the system, and this list goes on. Practically everything in Linux can be done using commands, as long as you have the correct commands installed, and permissions to do so.
+There are commands for listing files, making web requests, editing users, shutting down the system, and so on. You can do everything in Linux with commands as long as you have the correct commands installed and permissions to do so.
 
 ### Hello World
 
-First, open a terminal in your virtual machine. In Kali, you can do this by clicking the Terminal icon in the top-left of the desktop.
+First, open a terminal in your virtual machine. In Kali, you can do this by clicking the Terminal icon at the top-left of the desktop.
 
 ![Terminal Icon](./images/terminal_icon.png)
 ![Linux Terminal](./images/terminal.png)
 
-We will start off by looking at the `echo` command. This command simply echoes the provided text back to the output. For example, `echo hello world` will simply print `hello world`.
+We will start by looking at the `echo` command. This command echoes the provided text back to the output. For example, `echo hello world` will print `hello world`.
 
 ![Hello World](./images/helloworld.png)
 
 There are two parts to this command:
 
 1. `echo`: The command itself.
-2. `hello world`: The arguments/parameters passed to the command. In this case, the parameter is simply text we want to be printed.
+2. `hello world`: The arguments/parameters passed to the command. In this case, the parameter is simply the text we want the console to print.
 
-What are parameters? They're important as they allow us to tune the functions of a command. We will look more into parameters soon.
+What are the parameters? They're important as they allow us to tune the functions of a command. We will look more into the parameters soon.
 
 ### Input, Output, and Piping
 
-With the `echo` command, whatever input we provide (as a parameter) gets written to the output. What exactly is happening here though? We are providing a parameter, and the `echo` command is writing that text to the output *stream*, also known as *stdout* (standard output).
+With the `echo` command, whatever input we provide (as a parameter) gets written to the output. What exactly is happening here, though? We are providing a parameter, and the `echo` command is writing that text to the output *stream*, also known as *stdout* (standard output).
 
-Streams are basically channels that data is written to and read from. There are three standard streams in Linux:
+Streams are channels that data is written to and read from. There are three standard streams in Linux:
 - standard input (stdin)
 - standard output (stdout)
 - standard error (stderr)
@@ -62,9 +63,9 @@ There are also streams for reading from and writing to files.
 
 We can *pipe* the `echo` command's output (stdout) to a file using the `>` operator. `echo hello world > my_file` would write the text "hello world" to the `my_file` file.
 
-Piping using the `|` operator comes in handy when you wish to combine commands. For example, let's say you have a command `my_command` that results in a very large output. You can search this command's output using the `grep` command. Running the full command as `my_command | grep pattern`, you are running `my_command`, piping its output to `grep`'s input, and then `grep` only prints lines with `pattern`.
+Piping using the `|` operator comes in handy when you wish to combine commands. For example, you have a command `my_command` that results in a huge output. You can search this command's output using the `grep` command. Running the full command as `my_command | grep pattern`, you are running `my_command`, piping its output to `grep`'s input, and then `grep` only prints lines with `pattern`.
 
-There are more advanced ways in which you can use the piping operators (`|`, `>`, `<`) to combine the functions of commands. This is just a simple introduction to help you when you encounter these in the wild.
+There are more advanced ways in which you can use the piping operators (`|`, `>`, `<`) to combine the functions of commands. However, this section is just a simple introduction to help you when you encounter these in the wild.
 
 ### More Parameters
 
@@ -78,58 +79,58 @@ One parameter available for the `ls` command is `-a`. The `-a` parameter prints 
 
 ![ls hidden](./images/ls_hidden.png)
 
-Another parameter for the `ls` command is `-l`, which prints one entry per line. The `-l` parameter also outputs the file permissions, file size, and last write date for reach file.
+Another parameter for the `ls` command is `-l`, which prints one entry per line. The `-l` parameter also outputs the file permissions, file size, and last write date for each file.
 
 ![ls list](./images/ls_list.png)
 
-Commands usually allow multiple parameters, and we can combine the `-l` and `-a` parameters in this case: `ls -l -a`. When parameters start with a dash (`-`), they can often be combined into one as well: `ls -la` (this is not always the case).
+Commands usually allow multiple parameters, and we can combine the `-l` and `-a` parameters in this case: `ls -l -a`. When parameters start with a dash (`-`), you can often combine the parameters into one: `ls -la` (this is not always the case).
 
 How can we find these parameters and unlock the functionality of commands? There are two ways usually:
-- `man <command>`: The `man` command allows us to view the manual for a given command. `man ls` will give us a complete overview of the `ls` command.
+- `man <command>`: The `man` command allows us to view the manual for a given command. `man ls` will provide us with a complete overview of the `ls` command.
 - `<command> --help` or `<command> -h`: Running a command with the `--help`/`-h` argument often displays a brief help text.
 
-The `man` command is a very important and very helpful tool, so we will look more into it.
+The `man` command is a vital and beneficial tool so we will look more into it.
 
 ### More Commands
 
 [A cheatsheet for the different commands is provided below.](#commands-1)
 
-#### sudo
-
-The `sudo` command allows you to execute commands as different users. The most common usage is to run commands as the `root` user. When you use the `sudo` command, you will be prompted for your password before having your privileges elevated.
-
-Examples:
-
-- `sudo whoami`: This command, after entering your password, will output `root`.
-- `sudo apt update`: This command will run `apt update` as the `root` user.
-
 #### man
 
 The `man` command displays the reference manual for a given command. For example, `man ls` will show you the manual for the `ls` command.
 
-When the manual opens up, you will notice you can no longer run commands. Your keyboard is now tied to the controls of the manual. This is common among some commands, and allows for greater interactivity. Another command that does this is `nano`, which is a text-editor we will look at later.
+When the manual opens up, you will notice you can no longer run commands. Your keyboard is now tied to the controls of the manual. This is common among some commands and allows for greater interactivity. Another command that does this is `nano`, which is a text editor we will look at later.
 
 There are several useful controls you can do:
 - Using the arrow keys, you can now scroll through the manual.
 - Pressing `q` will exit the manual.
 - Pressing `h` will show the help page for controls.
-- Pressing `/<pattern>` will search for a certain pattern. For example, if you want to read more about the `-l` parameter, you can type `/-l` + *Enter*. Instead of typing the whole pattern again, simply type `/` + *Enter* to search for the next occurrence.
+- Pressing `/<pattern>` will search for a specific pattern. For example, if you want to read more about the `-l` parameter, you can type `/-l` + *Enter*. Instead of typing the whole pattern again, type `/` + *Enter* to search for the next occurrence.
 
-Note: These are the same controls as used with the `less` command.
+**Note**: These are the same controls as used with the `less` command.
 
 ![man ls](./images/man.png)
+
+#### sudo
+
+The `sudo` command allows you to execute commands as different users. The most common usage is to run commands as the `root` user. When you use the `sudo` command, the terminal will prompt you for your password before having your privileges elevated.
+
+Examples:
+
+- `sudo whoami`: This command will output `root` after entering your password.
+- `sudo apt update`: This command will run `apt update` as the `root` user.
 
 #### ls
 
 The `ls` command lists files and directories in the specified directory. If no directory is specified, it will use the current directory. As mentioned earlier, there are many useful options available:
 - `-a`: Show hidden files and directories (files/directories starting with `.`).
-- `-l`: Show in list format, includes file permissions, date modified, and file size in output.
-- `-R`: List files and directories recursively (lists everything in specified directory, and its child directories... so on).
+- `-l`: Show in list format, including file permissions, date modified, and file size in output.
+- `-R`: List files and directories recursively (lists everything in the specified directory, and its child directories... so on).
 
 Examples:
 - `ls`: List files and directories in the current directory.
 - `ls /`: List files and directories in the root (`/`) directory.
-- `ls -la /`: List files and directories (including hidden), in the root (`/`) directory, in list format.
+- `ls -la /`: List files and directories (including hidden) in the root (`/`) directory in list format.
 
 #### cd
 
@@ -166,7 +167,7 @@ Examples:
 
 #### touch
 
-The `touch` command creates a file if it does not exist, and does nothing if the file does exist. This is useful for testing file access and creating blank files.
+The `touch` command creates a file if it does not exist and does nothing if the file does exist. This command helps test file access and create blank files.
 
 Example: `touch my_file`
 
@@ -178,7 +179,7 @@ Example: `cat my_file`
 
 #### grep
 
-The `grep` command performs pattern matching on input either from stdin or files. `grep` has a lot of functionality and could receive its own blog post, but here's some basic examples.
+The `grep` command performs pattern matching on input either from stdin or files. `grep` has a lot of functionality and could receive its own blog post, but here are some basic examples.
 
 Examples:
 - `grep some_text my_file`
@@ -189,11 +190,11 @@ Examples:
 
 The `less` command takes input from either stdin or files and allows you to browse that input in a similar interface as the `man` command. This is very helpful when browsing large files or large outputs of commands.
 
-To view a quick description of the basic commands you can use *inside* the `less` command, they are the same as described in the [`man` section](#man). 
+To view a quick description of the basic commands, you can use *inside* the `less` command; they are the same as described in the [`man` section](#man).
 
 #### find
 
-The `find` command searches for files using the given criteria. This command is very powerful and is capable of searching for files based on name, size, text, file owner, and much more. It is even capable of executing commands for the matched files. Again, `find` could take its own blog post to describe its total functionality.
+The `find` command searches for files using the given criteria. This command is very powerful and is capable of searching for files based on name, size, text, file owner, and much more. It is even capable of executing commands for the matched files. `find` could also take its own blog post to describe its total functionality.
 
 Examples:
 
@@ -216,14 +217,14 @@ Examples:
 
 #### nano
 
-The `nano` command provides a very simple text editor on the command line. You can run `nano my_file` to open a file, then there are some basic controls:
+The `nano` command provides a straightforward text editor on the command line. You can run `nano my_file` to open a file, then there are some basic controls:
 
 - Use the arrow keys to move your cursor.
 - Typing on the keyboard adds text. The backspace and delete keys subtract text.
 - `Ctrl + S` / `Command + S` will save the file.
 - `Ctrl + X` / `Command + X` will exit the nano text editor.
 
-There are more useful actions you can perform, which can be seen at the bottom of the screen. The `^` icon simply denotes the `Ctrl` / `Command` key. So `^W Where Is` simply means `Ctrl + W` / `Command + W`.
+There are more useful actions you can perform, which you can see at the bottom of the screen. The `^` icon denotes the `Ctrl` / `Command` key. So `^W Where Is` means `Ctrl + W` / `Command + W`.
 
 #### strings
 
@@ -232,11 +233,11 @@ The `strings` command takes input from files and prints human-readable text.
 Examples:
 
 - `strings my_file`: Prints readable strings from `my_file`.
-- `strings -n 10 my_file`: Prints readable strings of length greather than or equal to 10.
+- `strings -n 10 my_file`: Prints readable strings of length greater than or equal to 10.
 
 #### wget
 
-The `wget` command downloads files. Most often this is used for download files from HTTP(S) servers.
+The `wget` command downloads files. Most often, we use `wget` to download files from HTTP(S) servers.
 
 Examples:
 
@@ -245,7 +246,7 @@ Examples:
 
 ## Users
 
-Users on Linux help enable access control which improves the security of the operating system. Users can also be members of groups and every user has a default group. Every file and directory is owned by a user and a group.
+Users on Linux help enable access control, which improves the security of the operating system. Users can also be members of groups, and every user has a default group. Each individual file has one owning user and one owning group.
 
 You can list all users on the current system by reading the `/etc/passwd` file:
 
@@ -264,7 +265,7 @@ You can list all groups and their members by reading the `/etc/group` file.
 
 You can list all password hashes for users by reading the `/etc/shadow` file.
 
-Often times, you require root privileges in order to execute certain commands or access certain files. To do this, you must use the [`sudo` command](#sudo). In order to use the `sudo` command, you must be in the `sudo` group.
+Often, you require root privileges to execute specific commands or access certain files. To do this, you must use the [`sudo` command](#sudo). To use the `sudo` command, you must be in the `sudo` group.
 
 ## File System
 
@@ -274,12 +275,12 @@ Files define almost everything in Linux: services, configurations, boot paramete
 
 All files and directories fall under the root directory (`/`).
 
-We access files/directories using paths, which can be defined relatively or absolutely.
+We access files/directories using paths that are defined either relatively or absolutely.
 
 - Absolute paths start with a `/` and start from the root directory. Examples: `/tmp`, `/tmp/`, `/tmp/my_file`
-- Relative paths start with anything else and are relative to the current directory. Examples: `my_file`, `./my_file`, `../../tmp/my_file`
+- Relative paths start with anything else relative to the current directory. Examples: `my_file`, `./my_file`, `../../tmp/my_file`
 
-As seen in the examples above, we have some special parts of paths indicated by `.`, `..`, and also `~`.
+As seen in the examples above, we have some unique parts of paths indicated by `.`, `..`, and also `~`.
 
 - `.` or `./` means the current directory.
 - `..` or `../` means the parent directory.
@@ -300,9 +301,9 @@ You can think of relative paths using the current directory to translate to an a
 
 ### Permissions
 
-As mentioned in the [Users section](#users), all files and directories are owned by a user and a group.
+As mentioned in the [Users section](#users), all files and directories are owned by one user and one group.
 
-The user and group ownership can be seen when using `ls` with the `-l` parameter.
+You can see the user and group ownership when using `ls` with the `-l` parameter.
 
 ```
 $ ls -l /home
@@ -310,9 +311,9 @@ total 4
 drwx------ 35 kali kali 4096 Oct 19 14:50 kali
 ```
 
-You can see the `/home/kali` directory is owned by both the `kali` user and the `kali` group.
+The `/home/kali` directory's owners are the `kali` user and the `kali` group.
 
-You can also change the ownership of files using the `chown` command. Often you will need to precede file ownership commands with `sudo`. For example:
+You can also change the ownership of files using the `chown` command. Often, you will need to precede file ownership commands with `sudo`. For example:
 
 - `sudo chown kali:kali my_file`: Changes the ownership of `my_file` to user `kali` and group `kali`.
 - `sudo chown -R kali:kali my_dir`: Changes the ownership of `my_dir` and all files/directories within (recursively) to user `kali` and group `kali`.
@@ -323,9 +324,9 @@ Setting these permissions can get a bit complicated, but a basic example is if y
 
 ### Links
 
-Files and directories can also link to other files and directories. This means that, while a certain file may exist in one directory of the file system, we can make it display in another directory as well.
+Files and directories can also link to other files and directories. While a certain file may exist in one directory of the file system, using links, we can make it display in another directory as well.
 
-We can see these links the same way we view file permissions; by using the `ls` command with the `-l` parameter.
+We can see these links the same way we view file permissions: by using the `ls` command with the `-l` parameter.
 
 ```
 $ ls -l /   
@@ -339,9 +340,13 @@ lrwxrwxrwx   1 root root          9 Dec  5  2022 lib32 -> usr/lib32
 lrwxrwxrwx   1 root root          9 Dec  5  2022 lib64 -> usr/lib64
 ```
 
-In the above output, we can see some links denoted with `->`. We can see `/bin` is actually a link to `/usr/bin`. So any files that exist in `/bin` are actually files in `/usr/bin`.
+In the above output, we see some links denoted with `->`. We can see `/bin` is a link to `/usr/bin`. So any files in `/bin` are actually files in `/usr/bin`.
 
-Links can be created using the `ln` command. Links can get a bit more complicated, so this is where this post will leave it.
+You can create links using the `ln` command. Links can get more complicated, so this is where this post will leave it.
+
+## Summary
+
+Overall, Linux can be a handy tool. The commands in Linux enable us to manage servers, solve challenges, use other tools, etc. Linux may take some getting used to, but once you are comfortable with it, it helps improve your efficiency significantly.
 
 ## Cheatsheet
 
@@ -350,6 +355,7 @@ Links can be created using the `ln` command. Links can get a bit more complicate
 | Command   | Description                             | Examples                                                               |
 | --------- | --------------------------------------- | ---------------------------------------------------------------------- |
 | `man`     | view manual for a command               | `man ls`                                                               |
+| `sudo`    | run command as root, or other users     | `sudo whoami`, `sudo apt update`                                       |
 | `ls`      | list directory contents                 | `ls`, `ls -la`                                                         |
 | `cd`      | change directory                        | `cd my_dir`, `cd ..`, `cd /`                                           |
 | `mkdir`   | make a directory                        | `mkdir my_dir`, `mkdir -p my_dir/sub_dir`                              |
