@@ -36,15 +36,15 @@ A Capture The Flag competition is an event where participants solve various secu
 
 You might be wondering how the jeopardy categories that were mentioned above are relevant to the industry. Below is a quick breakdown on some of the  that the skills you can learn are transferrable to a career in cybersecurity. Note: There are endless possibilities, don't get discouraged because I've only listed a few below!
 
-* Cryptography: Can be used to protect information, secure communications, and preserve privacy. 
+* __Cryptography__: Can be used to protect information, secure communications, and preserve privacy. 
 
-* Reverse Engineering: Can be used to analyze malicious software (malware) or understand how a system works. 
+* __Reverse Engineering__: Can be used to analyze malicious software (malware) or understand how a system works. 
 
-* Web exploitation: Can be used to help secure web applications by auditing the security controls in place.
+* __Web exploitation__: Can be used to help secure web applications by auditing the security controls in place.
 
-* Digital Forensics: Can be used for incident response (i.e. A company has been hacked, now you have to figure out how it happened). 
+* __Digital Forensics__: Can be used for incident response (i.e. A company has been hacked, now you have to figure out how it happened). 
 
-* Binary Exploitaiton: Can be used to audit software and other systems to find bugs that may compromise system security.
+* __Binary Exploitaiton__: Can be used to audit software and other systems to find bugs that may compromise system security.
 
 ## Are there any prerequisites for getting started?
 
@@ -52,21 +52,27 @@ While it's not required, it is strongly encouraged that you have some basic know
 
 ### Networking
 Questions to ask yourself: (How does the internet work? What is a network? What is an IP address? What's a port? What's a protocol?)
-* https://www.educative.io/blog/computer-networking-basics
-* https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work
+
+* [https://www.educative.io/blog/computer-networking-basics](https://www.educative.io/blog/computer-networking-basics)
+  
+* [https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work)
 
 ### The Web
 Questions to ask yourself: (What is HTTP? What are response codes? What are methods?)
-* https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works
-* https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines
-* https://developer.mozilla.org/en-US/docs/Web/HTTP
+
+* [https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
+  
+* [https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines)
+
+* [https://developer.mozilla.org/en-US/docs/Web/HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 
 ### Cryptography
-* https://medium.com/edureka/what-is-cryptography-c94dae2d5974
+* [https://medium.com/edureka/what-is-cryptography-c94dae2d5974](https://medium.com/edureka/what-is-cryptography-c94dae2d5974)
 
 ### Linux
-* https://unbcybersec.com/blog/training/linux-basics/
-* https://www.geeksforgeeks.org/introduction-to-linux-operating-system/
+* [https://unbcybersec.com/blog/training/linux-basics/](https://unbcybersec.com/blog/training/linux-basics/)
+  
+* [https://www.geeksforgeeks.org/introduction-to-linux-operating-system/](https://www.geeksforgeeks.org/introduction-to-linux-operating-system/)
 
 ## Where can I learn and practice these skills?
 
