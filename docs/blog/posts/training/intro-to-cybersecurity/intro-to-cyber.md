@@ -34,5 +34,5 @@ Below are some of the positions in cybersecurity that you can get into:
 
 Great question! Thankfully, there are lots of resources that exist on the internet. Millions of Youtube videos, blogs, and practice labs are around and provide content for FREE!
 
-If you're looking at learning some of the hands on skills, you've come to the right place. Check out our intro to Capture The Flag post. (Coming soon!)
+If you're looking at learning some of the hands on skills, you've come to the right place. Check out our intro to [Capture The Flag post](https://unbcybersec.com/blog/training/intro-to-ctfs/).
 
