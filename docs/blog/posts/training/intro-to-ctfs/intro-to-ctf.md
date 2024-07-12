@@ -78,11 +78,48 @@ Questions to ask yourself: (What is HTTP? What are response codes? What are meth
 
 There are many platforms and websites that host CTF challenges, such as HackTheBox, CTFtime, and PicoCTF. While these sites won't necessarily hold your hand through the process, they do host many challenges for people to try. If you're a member of our club, make sure to utilize our custom learning platform!!!!
 
-Okay - But seriously, how does one get started in a specific area before trying challenges? The following are a list of resources for getting started.
+Okay - But seriously, how does one get started in a specific area before trying challenges? The following are a list of resources and videos for getting started.
+
+### Web Security
+
+* Watch the first 6 videos from LiveOverFlow [Web Security - Youtube](https://www.youtube.com/watch?v=jmgsgjPn1vs&list=PLhixgUqwRTjx2BmNF5-GddyqZcizwLLGP&pp=iAQB)
+
+* Learn about some different web vulnerabilities [Web Vulns - Youtube](https://www.youtube.com/watch?v=4Jk_I-cw4WE&list=PLI_rLWXMqpSl_TqX9bbisW-d7tDqcVvOJ&pp=iAQB)
+
+* Learn about the most common security pitfalls in websites through the [OWASP Top 10](https://owasp.org/www-project-top-ten/) 
+
+### Cryptography
+
+* [Cryptography, what is it?](https://www.youtube.com/watch?v=jhXCTbFnK8o)
+
+* [Cryptography CTF challenges overview](https://www.youtube.com/watch?v=p__QZIxjHMk&list=PL1H1sBF1VAKU05UWhDDwl38CV4CIk7RLJ)
+
+## Digital Forensics
+
+* [Introduction to Digital Forensics](https://www.youtube.com/watch?v=Pf-JnQfAEew)
+
+* [DFIR 101](https://www.youtube.com/watch?v=ZPwrTOGlki4)
+
+* [Digital Forensics Guide](https://github.com/dbissell6/DFIR/blob/main/Blue_Book/Blue_Book.md)
+ 
+
+### Reverse Engineering (RevEng)
+* [What it reverse engineering?](https://www.youtube.com/watch?v=0_Eif2qGK7I)
+
+* [Learn Reverse-Engineering](https://www.youtube.com/watch?v=gh2RXE9BIN8) 
+
+### Binary Exploitation
+
+* Learn the basics from LiveOverFlow [Beginner Binary Exploitation - Youtube](https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&pp=iAQB)
+  
+
+## Okay, I'm ready! How about some challenges?
 
 * [cmdchallenge](https://cmdchallenge.com/) - CMDChallenge, a site to learn and practice using linux commands
 
-* [Bandit](https://overthewire.org/wargames/bandit/) - An incredibly addicting game to help you learn linux and using a terminal 
+* [Bandit](https://overthewire.org/wargames/bandit/) - An incredibly addicting game to help you learn about SSH, linux and using a terminal 
+
+* [PortSwigger - Learn Websecurity](https://portswigger.net/web-security) - The absolute best resource out there for web security
 
 * [Natas](https://overthewire.org/wargames/natas/) - Another incredibly addicting game to learn website security
 
