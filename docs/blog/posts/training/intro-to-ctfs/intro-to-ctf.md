@@ -22,19 +22,19 @@ A Capture The Flag competition is an event where participants solve various secu
 
 ## Importance of CTF Competitions
 
-1. Skill Development: CTFs provide hands-on experience in various areas of cybersecurity as they helping participants to develop practical skills and deepen their understanding of different technical concepts.
+1. Skill Development: CTFs provide hands-on experience in various areas of cybersecurity as they help participants develop practical skills and deepen their understanding of different technical concepts.
 
 2. Problem-Solving: The challenges encourage creative thinking and problem-solving, as participants must often think outside the box to discover solutions.
 
 3. Collaboration and Teamwork: Many CTFs are team-based, promoting collaboration and teamwork as participants work together to tackle complex problems.
 
-4. Real-World Application: The scenarios and challenges in CTFs are sometimes designed to mimic real-world environments or scenarios and providing valuable insights into how to handle actual challenges you may face.
+4. Real-World Application: The scenarios and challenges in CTFs are sometimes designed to mimic real-world environments and provide valuable insight into how to handle actual challenges you may face.
 
 5. Networking and Recognition: Competing in CTFs can help participants connect with like-minded individuals, mentors, and potential employers. Ultimately, its a great way of enhancing your professional network and career prospects.
 
 ## Let's talk about the categories some more
 
-You might be wondering how the jeopardy categories that were mentioned above are relevant to the industry. Below is a quick breakdown on some of the  that the skills you can learn are transferrable to a career in cybersecurity. Note: There are endless possibilities, don't get discouraged because I've only listed a few below!
+You might be wondering how the jeopardy categories that were mentioned above are relevant to the industry. Below is a quick breakdown on some of the skills you can learn that are transferrable to a career in cybersecurity. Note: There are endless possibilities, don't get discouraged because I've only listed a few below!
 
 * __Cryptography__: Can be used to protect information, secure communications, and preserve privacy. 
 
