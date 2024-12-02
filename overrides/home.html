@@ -1,0 +1,138 @@
+<!-- Render navigation link content -->
+{% macro render_content(nav_item, ref = nav_item) %}
+
+  <!-- Navigation link icon -->
+  {% if nav_item == ref or "navigation.indexes" in features %}
+    {% if nav_item.is_index and nav_item.meta.icon %}
+      {% include ".icons/" ~ nav_item.meta.icon ~ ".svg" %}
+    {% endif %}
+  {% endif %}
+
+  <!-- Navigation link title -->
+  {{ ref.title }}
+{% endmacro %}
+
+<!-- Render navigation item -->
+{% macro render(nav_item, ref = nav_item) %}
+
+  <!-- Determine classes -->
+  {% set class = "md-tabs__item" %}
+  {% if ref.active %}
+    {% set class = class ~ " md-tabs__item--active" %}
+  {% endif %}
+
+  <!-- Navigation item with nested items -->
+  {% if nav_item.children %}
+    {% set first = nav_item.children | first %}
+
+    <!-- Recurse, if the first item has further nested items -->
+    {% if first.children %}
+      {{ render(first, ref) }}
+
+    <!-- Nested navigation item -->
+    {% else %}
+      <a href="{{ first.url | url }}" class="p-3 text-decoration-none text-light">
+        {{ render_content(first, ref) }}
+      </a>
+    {% endif %}
+
+  <!-- Navigation item -->
+  {% else %}
+    <a href="{{ nav_item.url | url }}" class="p-3 text-decoration-none text-light">
+      {{ render_content(nav_item) }}
+    </a>
+  {% endif %}
+{% endmacro %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>UNB Cybersec</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap4-neon-glow.min.css' | url }}">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    
+  </head>
+  <body>
+
+    <div class="navbar-dark text-white">
+      <div class="container">
+        <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              {% for nav_item in nav %}
+                {{ render(nav_item) }}
+              {% endfor %}
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+<div class="jumbotron bg-transparent mb-0 radius-0">
+  <div class="container">
+      <div class="row">
+        <div class="col-xl-6">
+          <h1 class="display-2">UNB Cyberse<span class="vim-caret">c</span></h1>
+          <div class="lead mb-3 text-mono text-danger">The University of New Brunswick's own Cybersecurity Club!</div>
+          <div class="text-mono">
+            <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeS1uL-heQCcpjbiLwWZb7MkdmNFqHqnzNhM3mBg3BxpJb2-A/viewform"
+                class="btn btn-danger btn-shadow px-3 my-2 ml-0 text-left">
+              Register for our club!
+            </a>
+            <a target="_blank" href="https://discord.gg/kU6MRNr82J"
+               class="btn btn-danger btn-shadow px-3 my-2 ml-0 text-left">
+              Join our Discord!
+            </a>
+            <a target="_blank" href="https://www.instagram.com/unb_cybersec/"
+               class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
+              Follow our Instagram!  
+            </a>
+            <a href="{{ 'blog/' | url }}"
+               class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
+              Read our writeups!  
+            </a>
+            <a target="_blank" href="https://ctftime.org/team/220236"
+               class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
+              Check our stats!
+            </a>
+            <!--<a href="https://www.twitch.tv/unbctf"
+               class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
+              Watch our Streams!  
+            </a>-->
+          </div>
+
+          <p class="mt-5 text-grey text-spacey">
+            The UNB Cybersecurity Club aims to provide students with resources and a safe environment to learn hands-on cybersecurity skills through participation in Capture The Flag challenges and group practice sessions. Capture The Flag is a style of hacking event where you have one goal: hack away at problems and capture flags. Flags are placed in various locations -- they might be in a file, in a database, stuck into source code, or otherwise -- and your goal is to hunt them all down.
+          </p>
+          
+          <div class="text-darkgrey text-mono my-2">*Weekly meetings are held in-person on Wednesdays in Head Hall from 7:00pm-8:30pm</div>
+
+        </div>
+      </div>
+  </div>
+<!--  <div class="large-unb-logo">
+    <img class="mobile-hide" src="images/logo.png"/>
+</div> -->
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
